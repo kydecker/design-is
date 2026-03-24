@@ -87,12 +87,7 @@ const sentence = [
                     name={i.toString()}
                     value={word}
                   />
-                  <label for={word}>
-                    {word.split("").map((char, i) =>
-                      // prettier-ignore
-                      <span class="char" style={{ transitionDelay: `${i * 0.2}s` }}>{char}</span>
-                    )}
-                  </label>
+                  <label for={word}>{word}</label>
                 </div>
               ))}
             </fieldset>
@@ -114,7 +109,7 @@ const sentence = [
 <script>
   function setPageTitle() {
     const words = Array.from(
-      document.querySelectorAll<HTMLInputElement>("input:checked")
+      document.querySelectorAll<HTMLInputElement>("input:checked"),
     ).map((input) => input.value);
     const title = `Design is ${words.join(" ")}`;
     document.title = title;
@@ -169,13 +164,12 @@ const sentence = [
   });
 </script>
 
-<style lang="scss">
+<style>
   :root {
     --body-size: clamp(1.375rem, 1.2399rem + 0.6757vi, 2rem);
     --heading-size: clamp(1.7402rem, 1.4938rem + 1.2322vi, 2.88rem);
   }
 
-  // Reset
   *,
   *::before,
   *::after {
@@ -199,7 +193,6 @@ const sentence = [
     color: inherit;
   }
 
-  // Styles
   .definition {
     font-size: var(--body-size);
     padding: var(--body-size);
@@ -291,23 +284,18 @@ const sentence = [
 
     + label {
       cursor: pointer;
-
-      .char {
-        transition-property: filter, opacity;
-        transition-duration: 1.8s;
-        transition-timing-function: ease-out;
-      }
+      transition-property: filter, opacity;
+      transition-duration: 1.8s;
+      transition-timing-function: ease-out;
     }
 
     &:not(:checked) + label {
-      .char {
-        opacity: 0.2;
-        filter: blur(0.1em);
-        transition-timing-function: ease-in;
-      }
+      opacity: 0.2;
+      filter: blur(0.1em);
+      transition-timing-function: ease-in;
 
       @media (hover: hover) {
-        &:hover .char {
+        &:hover {
           transition-delay: 0s !important;
           transition-duration: 0.2s;
           opacity: 0.7;
