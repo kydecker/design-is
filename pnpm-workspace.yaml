@@ -1,0 +1,7 @@
+packages:
+  - design-is
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  sharp: false
+  workerd: false
