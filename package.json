@@ -10,9 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "astro": "^4.11.0",
-    "howler": "^2.2.4",
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.2.0",
+    "wrangler": "^4.120.1"
+  },
+  "devDependencies": {
     "typescript": "^5.4.5"
   }
 }
