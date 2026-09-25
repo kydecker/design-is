@@ -64,45 +64,49 @@ const sentence = [
       property="og:image:alt"
       content={"Design is the deliberate creation of light for others."}
     />
-    <script
-      is:inline
-      src="https://cdn.usefathom.com/script.js"
-      data-site="KCGZHGOE"
-      defer></script>
   </head>
   <body>
     <div class="definition">
       <header>
-        <h1><span class="design">Design</span> <span class="is">is</span></h1>
+        <h1>
+          <span class="design">Design</span> <span class="is">is</span>
+        </h1>
       </header>
       <div class="sentence">
-        {
-          sentence.map((fragment, i) => (
-            <fieldset>
-              {fragment.sort().map((word) => (
-                <div>
-                  <input
-                    type="radio"
-                    id={word}
-                    name={i.toString()}
-                    value={word}
-                  />
-                  <label for={word}>{word}</label>
-                </div>
-              ))}
-            </fieldset>
-          ))
-        }
+        {sentence.map((fragment, i) => (
+          <fieldset>
+            {fragment.sort().map((word) => (
+              <div>
+                <input
+                  type="radio"
+                  id={word}
+                  name={i.toString()}
+                  value={word}
+                />
+                <label for={word}>{word}</label>
+              </div>
+            ))}
+          </fieldset>
+        ))}
       </div>
       <a
         class="about"
         href="https://github.com/kydecker/design-is"
         aria-label="What's this?"
         target="_blank"
-        rel="noreferrer">?</a
+        rel="noreferrer"
       >
-      <a class="refresh" href="/" aria-label="refresh">⇄</a>
+        ?
+      </a>
+      <a class="refresh" href="/" aria-label="refresh">
+        ⇄
+      </a>
     </div>
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "b18d975e68824d4ca631e595bbe2158d"}'
+    ></script>
   </body>
 </html>
 
